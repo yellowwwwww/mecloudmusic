@@ -1,6 +1,8 @@
 .header-layout{
     width: 100%;
-    height:3rem;
+    height:1rem;
     background:red;
     font-size:.30rem;
+    line-height: 1rem;
+    color:#fff;
 }
