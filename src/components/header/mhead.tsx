@@ -1,27 +1,35 @@
-import React,{Component} from 'react';
+
+import React from 'react';
+import banner from '../../static/banner.jpg'
 import './mhead.css'
-
-class TabBar extends Component<any,any>{
-    constructor(props:any){
-        super(props)
-    }
-    
-    render(){
-        var list:Array<string>=[]
-        const tabList = [{title:'推荐'},{title:'我的'}]
-         tabList.forEach(item => {
-             list.push((`<p>${item.title}</p>`)) 
-        });
-
-        return list
-    }
-    
-}
 function mheader(){
     return(
         <div  className="header-layout">
-            <TabBar />
+            <TabBar></TabBar>
+            <Banner></Banner>
         </div>
+    )
+}
+class TabBar extends React.Component<any,any>{
+    constructor(props:any){
+        super(props)
+    }
+    render(){
+        let arrList = [{title:'推荐音乐'},{title:'热歌榜'},{title:'搜索'}]
+        let arr:Array<JSX.Element> = []
+        arrList.forEach(item => {
+         arr.push(<div className="item">{item.title}</div>)
+        });
+        return(
+            <div className='tabbar'>
+                {arr}
+            </div>
+        )
+    }
+}
+function Banner(){
+    return(
+        <div className="banner"><img className="img" src={banner}/> </div>
     )
 }
 export default mheader
