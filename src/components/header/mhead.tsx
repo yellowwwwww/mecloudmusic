@@ -20,6 +20,7 @@ class TabBar extends React.Component<any,any>{
     }
     render(){
         let arrList = [{title:'推荐音乐'},{title:'热歌榜'},{title:'搜索'}]
+<<<<<<< HEAD
         let arr:Array<any> = []
         
         for(let i = 0;i<arrList.length;i++){
@@ -29,6 +30,12 @@ class TabBar extends React.Component<any,any>{
         // arrList.forEach(element:<any,any> => {
          
         // });
+=======
+        let arr:Array<JSX.Element> = []
+        arrList.forEach(item => {
+         arr.push(<div className="item">{item.title}</div>)
+        });
+>>>>>>> 9a4b22c69f6ec166873dc8ebe5f8fa5c335671de
         return(
             <div className='tabbar'>
                 {arr}
