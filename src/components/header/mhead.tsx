@@ -19,7 +19,10 @@ class TabBar extends React.Component<any,any>{
         }
     }
     tabBar=(index:Number)=>{
-
+        console.log(index)
+        this.setState({
+            activeIndex:index
+        })
     }
     render(){
         let arrList = [{title:'推荐音乐'},{title:'热歌榜'},{title:'搜索'}]
@@ -27,7 +30,7 @@ class TabBar extends React.Component<any,any>{
         
         arrList.forEach((item,index) => {
             let active = this.state.activeIndex == index?'item-active':''
-            arr.push(<div className="item"><div className={active}></div>{item.title}</div>)
+            arr.push(<div onClick={(e)=>this.tabBar(index)} className="item"><div  className={active}></div>{item.title}</div>)
         });
         return(
             <div className='tabbar'>
