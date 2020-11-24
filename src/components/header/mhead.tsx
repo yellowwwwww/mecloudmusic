@@ -26,6 +26,8 @@ class Banner extends React.Component<{}, State> {
           this.setState({
               data:res.data.banners
           })
+      }).catch(res=>{
+        console.log(res)
       })
     }
     render() {
