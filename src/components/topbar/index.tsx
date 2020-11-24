@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import {withRouter ,RouteComponentProps } from 'react-router-dom';
 import './index.scss';
 interface props extends RouteComponentProps{}
@@ -10,11 +10,12 @@ class TabBar extends React.Component<props,any>{
      
         this.state={
             arrList:[{title:'推荐音乐',path:'/'},{title:'热歌榜',path:'/hot'},{title:'搜索',path:'/search'}],
-            activeIndex:'/'
+            activeIndex:'0'
         }
         
     }
     componentDidMount(){
+        
     }
     tabBar=(item:any)=>{
         this.props.history.push(item.path)
@@ -27,7 +28,7 @@ class TabBar extends React.Component<props,any>{
         
         this.state.arrList.forEach((item:any,index:any) => {
             let active = this.props.location.pathname === item.path?'item-active':''
-            arr.push(<div key={index} className="item" onClick={(e)=>{this.tabBar(item)}}><div className={active}></div>{item.title}</div>)
+            arr.push(<div key={index} className="item"  onClick={(e)=>{this.tabBar(item)}}><div className={active}></div>{item.title}</div>)
         });
         return(
             <div className='tabbar'>
