@@ -1,13 +1,9 @@
-import React,{FC} from 'react';
-import { Button } from 'antd-mobile';
-import './App.scss';
-import Mheader from "./components/header/mhead"
+import React from 'react';
 
-const App: FC = () => (
-  <div className="App">
-    
-    <Mheader></Mheader>
-  </div>
-);
+import './App.scss';
+import Routes from '../src/router/index'
+function App(){
+  return <Routes/>
+}
 
 export default App;
