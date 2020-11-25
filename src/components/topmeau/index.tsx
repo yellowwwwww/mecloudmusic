@@ -5,7 +5,7 @@ const TopMeau=()=>{
         <div className='topmeau-layout'>
             <div className="topmeau">
                 <i className='iconfont iconcaidan'></i>
-                <text>QQCloudMusic</text>
+                <p>QQCloudMusic</p>
                 <i className='iconfont iconsousuo'></i>
             </div>
         </div>
