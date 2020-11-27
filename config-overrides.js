@@ -1,10 +1,10 @@
 const { override, fixBabelImports ,adjustStyleLoaders} = require('customize-cra');
 
 module.exports = override(
-      //  fixBabelImports('import', {
-      //    libraryName: 'antd-mobile',
-      //    style: 'css',
-      //  }),
+       fixBabelImports('import', {
+         libraryName: 'antd-mobile',
+         style: 'css',
+       }),
        adjustStyleLoaders(rule => {
         if (rule.test.toString().includes('scss')) {
           rule.use.push({
