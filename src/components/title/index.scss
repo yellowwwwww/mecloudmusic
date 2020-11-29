@@ -1,0 +1,14 @@
+.title-layout{
+    display: flex;
+    padding-left: .2rem;
+    margin-top: .3rem;
+    
+    font-size: $font-lg;
+    font-weight: 900;
+    
+    .iconfont{
+        font-size: .4rem;
+      
+        color:$default-text-grey
+    }
+}
