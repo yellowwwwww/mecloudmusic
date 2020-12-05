@@ -1,4 +1,4 @@
-const { override, fixBabelImports,adjustStyleLoaders  } = require('customize-cra');
+const { override, fixBabelImports ,adjustStyleLoaders} = require('customize-cra');
 
 module.exports = override(
        fixBabelImports('import', {
@@ -6,11 +6,11 @@ module.exports = override(
          style: 'css',
        }),
        adjustStyleLoaders(rule => {
-        if (rule.test.toString().includes("scss")) {
+        if (rule.test.toString().includes('scss')) {
           rule.use.push({
-            loader: require.resolve("sass-resources-loader"),
+            loader: require.resolve('sass-resources-loader'),
             options: {
-              resources: "./src/global.scss" //这里是你自己放公共scss变量的路径
+              resources: './src/global.scss'
             }
           });
         }
