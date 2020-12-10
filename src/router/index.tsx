@@ -4,6 +4,7 @@ import Hot from '../pages/hot/index';
 import React from 'react';
 import TopBar from '../components/topbar'
 import TopMeau from '../components/topmeau/index'
+import PlayMusic from '../components/playmusic/index'
 import {HashRouter,Route,Switch} from 'react-router-dom'
 
 const Routes = () => {
@@ -16,6 +17,7 @@ const Routes = () => {
             <Route exact path="/hot" component={Hot}></Route>
             <Route exact path="/search" component={Search}></Route>
         </Switch>
+        <PlayMusic></PlayMusic>
     </HashRouter>
     
     )

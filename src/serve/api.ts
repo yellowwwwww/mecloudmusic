@@ -9,3 +9,11 @@ export function banner(){
 export function playList(data:{}){
     return request(`/personalized`,data,'GET')
 }
+//每日音乐
+export function nowMusicList(data:{}){
+    return request(`/personalized/newsong`,data,'GET')
+}
+//电台
+export function dtList(data:{}){
+    return request(`/dj/personalize/recommend`,data,'GET')
+}

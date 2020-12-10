@@ -8,16 +8,16 @@ export default class Meau extends React.Component<{},any>{
     constructor(props:any){
         super(props)
         this.state = {
-            meauList: [ { title: '心灵电台', icon: 'iconshouyinji' },
+            meauList: [ 
                         { title: '每日推荐', icon: 'iconrili' },
                         { title: '歌单', icon: 'icongedan' },
+                        { title: '心灵电台', icon: 'iconshouyinji' },
                         { title: '排行榜', icon: 'iconpaihangbang' }
                         ]
         }
     }
-        
-    
     render(){
+        console.log(this.context)
         return(
             <div className="meau-layout">
                 <div className="meau">
