@@ -22,5 +22,8 @@ interface Iprops{
             </div>
     )
 }
+<<<<<<< HEAD
 
 export default Title
+=======
+>>>>>>> 31c06c723979082da913aeac18b13fc8eaf46236
