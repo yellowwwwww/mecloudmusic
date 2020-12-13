@@ -1,8 +1,13 @@
 
 import React from 'react'
+import TopMeau from '../../components/topmeau'
+import TopBar from '../../components/topbar'
 const Hot =()=>{
     return(
-        <div>热歌榜</div>
+        <div>
+            <TopMeau></TopMeau>
+            <TopBar></TopBar>
+        </div>
     )
 }
 export default Hot

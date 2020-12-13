@@ -1,0 +1,34 @@
+.song-layout{
+    font-size: $font-base;
+    .nav{
+        
+    }
+    .song-header{
+        width: 100%;
+        height: 5rem;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position:left center;
+        filter: blur(300px);
+        
+    }
+    .song-title{
+        width: 100%;
+        height:.5rem;
+        padding: .2rem;
+        line-height: .5rem;
+        position: fixed;
+        top:0;
+        z-index: 9;
+        .song-title-layout{
+            color:#Fff;
+            display: flex;
+            flex-direction: row;
+            font-size: $font-lg;
+            .iconfont{
+                font-weight: 900;
+                color:#fff;
+            }
+        }
+    }
+}

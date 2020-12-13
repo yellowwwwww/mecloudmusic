@@ -17,3 +17,7 @@ export function nowMusicList(data:{}){
 export function dtList(data:{}){
     return request(`/dj/personalize/recommend`,data,'GET')
 }
+//detail
+export function SongDetail(data:{}){    
+    return request(`/playlist/detail`,data,'GET')
+}

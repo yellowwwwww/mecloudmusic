@@ -1,24 +1,56 @@
+import { url } from 'inspector'
 import React,{Component} from 'react'
-import { connect } from 'react-redux'
+import {SongDetail} from '../../serve/api'
+import './index.scss'
+type Item ={
+    [key:string]:any
+}
 interface Istate{
-    name:String
+    detail:Item,
+    
+}
+interface Iprops{   
+    match:any
 }
 
-class songList extends Component<Istate,any>{
-
+class SongList extends Component<Iprops,Istate>{
+    public state={
+        detail:{
+            coverImgUrl:''
+        }
+    }
+    componentDidMount(){
+       this.detail()
+        
+    }
+    detail(){
+        console.log(this.props.match)
+        const data={id:this.props.match.params.id}
+        SongDetail(data).then((res:any)=>{
+            this.state.detail = res.data.playlist
+            this.setState({
+                detail:res.data.playlist
+            })
+        })
+    }
     render(){
-        console.log(this.props)
+        //let style = {}
         return (
-            <div>111</div>
+            <div className="song-layout"> 
+             <div className="song-title">
+                <div className="song-title-layout">
+                    <i className="iconfont iconicon-test"></i>
+                    <p style={{paddingLeft:'.2rem'}}>{this.props.match.params.title}</p>
+                </div>
+            </div>
+           <div className="song-header" style={{backgroundImage:`url(${this.state.detail.coverImgUrl})`}}>       
+           44444444444444444444444444444
+            </div> 
+            </div>
         )
     }
 }
 
 
-const mapStateToProps = (state:any) =>{
-    return {
-        name:state.name,
-    
-    }
-}
-export default connect(mapStateToProps)(songList)
+
+export default SongList
