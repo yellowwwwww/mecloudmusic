@@ -24,8 +24,6 @@ interface  Iprops extends RouteComponentProps{
         list:[]
     }
     Nato(item:Item){
-        this.props.setName(item.name)
-        
         this.props.history.push({pathname:`/List/${item.id}/${this.props.title}`})
     }
     render(){
@@ -38,7 +36,6 @@ interface  Iprops extends RouteComponentProps{
                     
                     {this.props.list.map((item:Item,index)=>
                     (<div  className="item" key={index} onClick={()=>this.Nato(item)}>
-                        
                         <img src={item.picUrl}></img>
                         <p>{item.name.substring(0,20)}</p>
                     
