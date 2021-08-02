@@ -9,8 +9,8 @@ type Item ={
 interface Istate{
     detail:Item,
     color:string,
-    title:string
-    
+    title:string,
+    isLoading:boolean
 }
 interface Iprops extends RouteComponentProps {   
     match:any
@@ -22,11 +22,11 @@ class SongList extends Component<Iprops,Istate>{
             //coverImgUrl:''
         },
         color:'',
-        title:this.props.match.params.title
+        title:this.props.match.params.title,
+        isLoading:true
     }
     componentDidMount(){
        this.detail()
-       
        window.addEventListener('scroll',this.scroll)
     }
     componentDidUpdate(){
@@ -49,12 +49,26 @@ class SongList extends Component<Iprops,Istate>{
         SongDetail(data).then((res:any)=>{
             this.state.detail = res.data.playlist
             this.setState({
-                detail:res.data.playlist
+                detail:res.data.playlist,
+                isLoading:false
             })
         })
     }
     render(){
         //let style = {}
+        if(this.state.isLoading){
+            return(
+            <div className="song-layout">
+                <div className="colum">
+                    <span className="c1"></span>
+                    <span className="c2"></span>
+                    <span className="c3"></span>
+                    <span className="c4"></span>
+                </div>
+                <div className="loading-text">加载中</div>
+            </div>
+            )
+        }
         return (
             <div className="song-layout"> 
                 <div className="song-title" style={{background:this.state.color}}>
@@ -92,7 +106,6 @@ class SongList extends Component<Iprops,Istate>{
                         )):''
                     }
                 </div>
-                
             </div>
         )
     }

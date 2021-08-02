@@ -10,7 +10,15 @@ function name(state = mystate.name,action:any){
             return state
     }
 }
-
+function banners(state = mystate.banners,action:any){
+    switch(action.type){
+        case 'setBanners':
+            return action.data;
+        default:
+            return state
+    }
+}
 export default combineReducers({
-    name
+    name,
+    banners
 })

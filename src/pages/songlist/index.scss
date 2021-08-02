@@ -1,6 +1,121 @@
 .song-layout{
     font-size: $font-base;
     height: auto;
+    .loading-text{
+        text-align: center;
+        margin-top: .1rem;
+        font-size: .2rem;
+        color: #ccc;
+    }
+    .colum{
+        position: relative;
+        width: .55rem;
+        height: .4rem;
+        left: 50%;
+        margin-top: 50%;
+        margin-left: -.375rem   ;
+        .c1{
+            display: block;
+            width: .1rem;
+            height: .1rem;
+            background: red;
+            opacity: .6;    
+            position:absolute;
+            left: 0;
+            bottom: 0;
+            animation:a1 linear 1s infinite;
+        }
+        @keyframes a1 {
+            0%{
+                height: .1rem;
+            }
+            25%{
+                height: .2rem;
+            }
+            50%{
+                height: .3rem;
+            }
+            100%{
+                height: .4rem;
+            }
+        }
+        .c2{
+            display: block;
+            width: .1rem;
+            height: .2rem;
+            background: red;
+            opacity: .6;
+            position:absolute;
+            left: .2rem;
+            bottom: 0;
+            animation:a2 linear 1s infinite;
+        }
+        @keyframes a2 {
+            0%{
+                height: .2rem;
+            }
+            25%{
+                height: .3rem;
+            }
+            50%{
+                height: .4rem;
+            }
+            100%{
+                height: .1rem;
+            }
+        }
+        .c3{
+            display: block;
+            width: .1rem;
+            height: .3rem;
+            background: red;
+            opacity: .6;
+           
+            position:absolute;
+            left: .4rem;
+            bottom: 0;
+            animation:a3 linear 1s infinite;
+        }
+        @keyframes a3 {
+            0%{
+                height: .3rem;
+            }
+            25%{
+                height: .4rem;
+            }
+            50%{
+                height: .1rem;
+            }
+            100%{
+                height: .2rem;
+            }
+        }
+        .c4{
+            display: block;
+            width: .1rem;
+            height: .4rem;
+            background: red;
+            opacity: .6;
+            position:absolute;
+            left: .6rem;
+            bottom: 0;
+            animation:a4 linear 1s infinite;
+        }
+        @keyframes a4 {
+            0%{
+                height: .4rem;
+            }
+            25%{
+                height: .1rem;
+            }
+            50%{
+                height: .2rem;
+            }
+            100%{
+                height: .3rem;
+            }
+        }
+    }
     .song-list{
         position:absolute;
         background: #fff;

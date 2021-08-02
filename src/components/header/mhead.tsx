@@ -3,7 +3,7 @@ import React from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
 import './mhead.scss'
 import {banner} from '../../serve/api'
-
+import {connect} from "react-redux"
 type BannerItem = {
     [key: string]: any
 }
@@ -12,20 +12,25 @@ type State = {
     data: [BannerItem] | never[],
     imgHeight: Number|String
 }
-
-class Banner extends React.Component<{}, State> {
+const mapStateToProps = (state:any)=>{
+    return{
+        banners:state.banners
+    }
+}
+class Banner extends React.Component<any, State> {
     state = {
       data: [],
       imgHeight: 176,
     }
     componentDidMount() {
       // simulate img loading
-    
+      
       banner().then((res:any)=>{
           console.log(res)
           this.setState({
               data:res.data.banners
           })
+
       }).catch(res=>{
         console.log(res)
       })
@@ -64,4 +69,4 @@ class Banner extends React.Component<{}, State> {
       );
     }
   }
-export default Banner
+export default connect(mapStateToProps)(Banner)
